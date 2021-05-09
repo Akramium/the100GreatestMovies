@@ -5,7 +5,6 @@ response = requests.get(url="https://www.senscritique.com/films/tops/top100-des-
 em_web_page = response.text
 
 soup = BeautifulSoup(em_web_page, 'html.parser')
-#
 
 movies = [title.getText() for title in soup.find_all(name="a", class_="elco-anchor")]
 
